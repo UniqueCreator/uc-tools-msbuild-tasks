@@ -9,11 +9,14 @@ namespace UniqueCreator
 {
     namespace Build
     {
-        public class ComputePipelineStateObject : PipelineStateObject
+        namespace Tasks
         {
-            protected override string GenerateCommandLineCommands()
+            public class ComputePipelineStateObject : PipelineStateObject
             {
-                return base.GenerateCommandLineCommands() + " --compute";
+                protected override string GenerateCommandLineCommands()
+                {
+                    return base.GenerateCommandLineCommands() + " --compute";
+                }
             }
         }
     }
