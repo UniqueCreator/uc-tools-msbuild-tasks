@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>uc-tools-graphics-gpu-pipeline-compiler</id>
+    <id>uc-tools-msbuild-tasks</id>
     <version>@version</version>
-    <title>uc-tools-graphics-gpu-pipeline-compilern library</title>
+    <title></title>
     <authors>Stefan Dyulgerov</authors>
     <owners>kingofthebongo2009</owners>
     <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
@@ -14,7 +14,7 @@
     <tags>serialization,unique,uc,creator,pipeline</tags>
   </metadata>
   <files>
-    <file src = "build\bin\release" target = "build" />
+    <file src = "build\bin\release" target = "lib\native" />
     <file src = "build\uc-tools-msbuild-tasks.props"   target = "build" />
     <file src = "build\uc-tools-msbuild-tasks.targets"   target = "build" />
   </files>
