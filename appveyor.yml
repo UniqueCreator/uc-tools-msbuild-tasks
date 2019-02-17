@@ -3,7 +3,7 @@ pull_requests:
   do_not_increment_build_number: true
 image: Visual Studio 2019 Preview
 configuration: Release
-platform: x64
+platform: AnyCPU
 clone_folder: c:\projects
 build:
   project: c:\projects\build\build.sln
