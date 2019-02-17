@@ -19,7 +19,7 @@
 
   </metadata>
   <files>
-    <file src = "build\bin\release" target = "lib\native" />
+    <file src = "build\bin\release\" target = "lib\native\" />
     <file src = "build\uc-tools-msbuild-tasks.props"   target = "build" />
     <file src = "build\uc-tools-msbuild-tasks.targets"   target = "build" />
   </files>
