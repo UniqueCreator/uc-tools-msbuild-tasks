@@ -12,6 +12,11 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Allows Native C++ Applications to use precompiled lzham</description>
     <tags>serialization,unique,uc,creator,pipeline</tags>
+
+    <dependencies>
+        <dependency id="uc-tools-graphics-pipeline-state-compiler" version="1.0.28"/>
+    </dependencies>
+
   </metadata>
   <files>
     <file src = "build\bin\release" target = "lib\native" />
