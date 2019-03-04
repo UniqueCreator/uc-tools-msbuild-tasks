@@ -397,7 +397,7 @@
     </Target>    
 
     <Target Name="UcToolsGenerateRootSignature" DependsOnTargets="UcToolsMakeDirsRootSignature;UcToolsGenerateRootSignatureItems" Condition="'@(RootSignature)' != ''">
-        <FXCompilerDomain
+        <FXCompilerRootSignature
             Source                      ="%(RootSignatureBuilds.FullPath)" EntryPointName ="%(RootSignatureBuilds.EntryPointName)"
             CPPOutput                   ="%(RootSignatureBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(RootSignatureBuilds.CPPHeaderOutput)"
@@ -408,7 +408,7 @@
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
-        </FXCompilerDomain>
+        </FXCompilerRootSignature>
     </Target>        
 
     <PropertyGroup>
