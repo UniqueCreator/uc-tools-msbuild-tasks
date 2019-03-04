@@ -68,6 +68,14 @@
     <Compile Include="..\src\GraphicsPipelineStateObject.cs" />
     <Compile Include="..\src\PipelineStateObject.cs" />
     <Compile Include="..\src\Properties/AssemblyInfo.cs" />
+    <Compile Include="..\src\FXCompiler.cs" />
+    <Compile Include="..\src\FXCompilerPixel.cs" />
+    <Compile Include="..\src\FXCompilerVertex.cs" />
+    <Compile Include="..\src\FXCompilerCompute.cs" />
+    <Compile Include="..\src\FXCompilerDomain.cs" />
+    <Compile Include="..\src\FXCompilerHull.cs" />
+    <Compile Include="..\src\FXCompilerGeometry.cs" />
+    <Compile Include="..\src\FXCompilerRootSignature.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
