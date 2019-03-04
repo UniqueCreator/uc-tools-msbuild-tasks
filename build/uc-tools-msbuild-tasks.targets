@@ -304,19 +304,19 @@
         </ComputePipelineStateObject>
     </Target>    
 
-    <Target Name="UcToolsGenerateDomainShader" DependsOnTargets="UcToolsMakeDirsDomainShader;UcToolsGenerateDomainShaderItems" Condition="'@(DomainShader)' != ''">
-        <FXCompilerDomain
-            Source                      ="%(DomainShaderBuilds.FullPath)" EntryPointName ="%(DomainShaderBuilds.EntryPointName)"
-            CPPOutput                   ="%(DomainShaderBuilds.CPPOutput)"
-            CPPHeaderOutput             ="%(DomainShaderBuilds.CPPHeaderOutput)"
-            TypeName                    ="%(DomainShaderBuilds.TypeName)"
+    <Target Name="UcToolsGeneratePixelShader" DependsOnTargets="UcToolsMakeDirsPixelShader;UcToolsGeneratePixelShaderItems" Condition="'@(PixelShader)' != ''">
+        <FXCompilerPixel
+            Source                      ="%(PixelShaderBuilds.FullPath)" EntryPointName ="%(PixelShaderBuilds.EntryPointName)"
+            CPPOutput                   ="%(PixelShaderBuilds.CPPOutput)"
+            CPPHeaderOutput             ="%(PixelShaderBuilds.CPPHeaderOutput)"
+            TypeName                    ="%(PixelShaderBuilds.TypeName)"
             TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
-        </FXCompilerDomain>
+        </FXCompilerPixel>
     </Target>    
 
     <Target Name="UcToolsGenerateVertexShader" DependsOnTargets="UcToolsMakeDirsVertexShader;UcToolsGenerateVertexShaderItems" Condition="'@(VertexShader)' != ''">
@@ -365,43 +365,43 @@
         </FXCompilerDomain>
     </Target>    
 
-    <Target Name="UcToolsGenerateDomainShader" DependsOnTargets="UcToolsMakeDirsDomainShader;UcToolsGenerateDomainShaderItems" Condition="'@(DomainShader)' != ''">
-        <FXCompilerDomain
-            Source                      ="%(DomainShaderBuilds.FullPath)" EntryPointName ="%(DomainShaderBuilds.EntryPointName)"
-            CPPOutput                   ="%(DomainShaderBuilds.CPPOutput)"
-            CPPHeaderOutput             ="%(DomainShaderBuilds.CPPHeaderOutput)"
-            TypeName                    ="%(DomainShaderBuilds.TypeName)"
+    <Target Name="UcToolsGenerateHullShader" DependsOnTargets="UcToolsMakeDirsHullShader;UcToolsGenerateHullShaderItems" Condition="'@(HullShader)' != ''">
+        <FXCompilerHull
+            Source                      ="%(HullShaderBuilds.FullPath)" EntryPointName ="%(HullShaderBuilds.EntryPointName)"
+            CPPOutput                   ="%(HullShaderBuilds.CPPOutput)"
+            CPPHeaderOutput             ="%(HullShaderBuilds.CPPHeaderOutput)"
+            TypeName                    ="%(HullShaderBuilds.TypeName)"
             TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
-        </FXCompilerDomain>
+        </FXCompilerHull>
     </Target>    
 
 
-    <Target Name="UcToolsGenerateDomainShader" DependsOnTargets="UcToolsMakeDirsDomainShader;UcToolsGenerateDomainShaderItems" Condition="'@(DomainShader)' != ''">
-        <FXCompilerDomain
-            Source                      ="%(DomainShaderBuilds.FullPath)" EntryPointName ="%(DomainShaderBuilds.EntryPointName)"
-            CPPOutput                   ="%(DomainShaderBuilds.CPPOutput)"
-            CPPHeaderOutput             ="%(DomainShaderBuilds.CPPHeaderOutput)"
-            TypeName                    ="%(DomainShaderBuilds.TypeName)"
+    <Target Name="UcToolsGenerateGeometryShader" DependsOnTargets="UcToolsMakeDirsGeometryShader;UcToolsGenerateGeometryShaderItems" Condition="'@(GeometryShader)' != ''">
+        <FXCompilerGeometry
+            Source                      ="%(GeometryShaderBuilds.FullPath)" EntryPointName ="%(GeometryShaderBuilds.EntryPointName)"
+            CPPOutput                   ="%(GeometryShaderBuilds.CPPOutput)"
+            CPPHeaderOutput             ="%(GeometryShaderBuilds.CPPHeaderOutput)"
+            TypeName                    ="%(GeometryShaderBuilds.TypeName)"
             TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
-        </FXCompilerDomain>
+        </FXCompilerGeometry>
     </Target>    
 
-    <Target Name="UcToolsGenerateDomainShader" DependsOnTargets="UcToolsMakeDirsDomainShader;UcToolsGenerateDomainShaderItems" Condition="'@(DomainShader)' != ''">
+    <Target Name="UcToolsGenerateRootSignature" DependsOnTargets="UcToolsMakeDirsRootSignature;UcToolsGenerateRootSignatureItems" Condition="'@(RootSignature)' != ''">
         <FXCompilerDomain
-            Source                      ="%(DomainShaderBuilds.FullPath)" EntryPointName ="%(DomainShaderBuilds.EntryPointName)"
-            CPPOutput                   ="%(DomainShaderBuilds.CPPOutput)"
-            CPPHeaderOutput             ="%(DomainShaderBuilds.CPPHeaderOutput)"
-            TypeName                    ="%(DomainShaderBuilds.TypeName)"
+            Source                      ="%(RootSignatureBuilds.FullPath)" EntryPointName ="%(RootSignatureBuilds.EntryPointName)"
+            CPPOutput                   ="%(RootSignatureBuilds.CPPOutput)"
+            CPPHeaderOutput             ="%(RootSignatureBuilds.CPPHeaderOutput)"
+            TypeName                    ="%(RootSignatureBuilds.TypeName)"
             TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
