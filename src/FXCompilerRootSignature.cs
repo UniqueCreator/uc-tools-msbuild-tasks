@@ -15,7 +15,7 @@ namespace UniqueCreator
             {
                 protected override string GenerateCommandLineCommands()
                 {
-                    return base.GenerateCommandLineCommands() + "--type rootsignature";
+                    return base.GenerateCommandLineCommands() + " --type rootsignature";
                 }
             }
         }

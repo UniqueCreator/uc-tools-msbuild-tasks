@@ -15,7 +15,7 @@ namespace UniqueCreator
             {
                 protected override string GenerateCommandLineCommands()
                 {
-                    return base.GenerateCommandLineCommands() + "--type hull";
+                    return base.GenerateCommandLineCommands() + " --type hull";
                 }
             }
         }

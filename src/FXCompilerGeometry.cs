@@ -15,7 +15,7 @@ namespace UniqueCreator
             {
                 protected override string GenerateCommandLineCommands()
                 {
-                    return base.GenerateCommandLineCommands() + "--type geometry";
+                    return base.GenerateCommandLineCommands() + " --type geometry";
                 }
             }
         }
