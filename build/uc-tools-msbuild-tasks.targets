@@ -8,7 +8,7 @@
 
     <UsingTask AssemblyFile="$(UCToolsBuildTasks)" TaskName="UniqueCreator.Build.Tasks.GraphicsPipelineStateObject"/>
     <UsingTask AssemblyFile="$(UCToolsBuildTasks)" TaskName="UniqueCreator.Build.Tasks.ComputePipelineStateObject"/>
-    <UsingTask AssemblyFile="$(UCToolsBuildTasks)" TaskName="UniqueCreator.Build.Tasks.FXCompilerDomain"/>
+    <UsingTask AssemblyFile="$(UCToolsBuildTasks)" TaskName="UniqueCreator.Build.Tasks.FXCompilerPixel"/>
     <UsingTask AssemblyFile="$(UCToolsBuildTasks)" TaskName="UniqueCreator.Build.Tasks.FXCompilerVertex"/>
     <UsingTask AssemblyFile="$(UCToolsBuildTasks)" TaskName="UniqueCreator.Build.Tasks.FXCompilerCompute"/>
     <UsingTask AssemblyFile="$(UCToolsBuildTasks)" TaskName="UniqueCreator.Build.Tasks.FXCompilerDomain"/>
