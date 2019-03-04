@@ -121,8 +121,8 @@
             CPPOutput                   ="%(ComputePipelineStateObjectBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(ComputePipelineStateObjectBuilds.CPPHeaderOutput)"
             TrackerLogDirectory         ="$(TrackerLogDirectory)"
-            ToolPath                    ="$(UCToolsComputePipelineTool1Path)"
-            ToolNameExtended            ="$(UCToolsComputePipelineTool1Name)"
+            ToolPath                    ="$(UCToolsGraphicsPipelineTool1Path)"
+            ToolNameExtended            ="$(UCToolsGraphicsPipelineTool1Name)"
              >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
