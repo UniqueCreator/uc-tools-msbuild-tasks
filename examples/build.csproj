@@ -17,8 +17,21 @@
     </GraphicsPipelineStateObject>
   </ItemGroup>
   <ItemGroup>
-    <PixelShader Include="textured_pixel.hlsl" />
+    <PixelShader Include="pixel.hlsl" />
   </ItemGroup>
+  <ItemGroup>
+    <VertexShader Include="vertex.hlsl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ComputeShader Include="compute.hlsl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <RootSignature Include="default_graphics_root_signature.hlsl" />
+    <RootSignature Include="default_compute_root_signature.hlsl"  />
+  </ItemGroup>
+
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
