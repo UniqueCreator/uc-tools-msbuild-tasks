@@ -166,3 +166,4 @@ ShaderCache/
 
 # Sublime
 *.sublime-workspace
+*.nupkg
