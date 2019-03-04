@@ -15,6 +15,7 @@ struct input
 [RootSignature( MyRS1 ) ]
 interpolants main( input i )
 {
+    interpolants r;
     r.uv                    = float2(0,0);
     r.position              = float4(0,0,0,1);
     return r;
