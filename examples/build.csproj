@@ -23,10 +23,16 @@
     <PixelSharpShader Include="pixel_cs.hlsl" />
   </ItemGroup>
   <ItemGroup>
+    <VertexSharpShader Include="vertex_cs.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
     <VertexShader Include="vertex.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <ComputeShader Include="compute.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ComputeSharpShader Include="compute_cs.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <RootSignature Include="default_graphics_signature.hlsl">
@@ -36,6 +42,16 @@
       <EntryPointName>MyRS2</EntryPointName>
     </RootSignature>
   </ItemGroup>
+
+  <ItemGroup>
+    <RootSharpSignature Include="default_graphics_signature_cs.hlsl">
+      <EntryPointName>MyRS1</EntryPointName>
+    </RootSharpSignature>
+    <RootSharpSignature Include="default_compute_signature_cs.hlsl">
+      <EntryPointName>MyRS2</EntryPointName>
+    </RootSharpSignature>
+  </ItemGroup>
+
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
