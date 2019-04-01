@@ -638,7 +638,7 @@
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
-        </FXCompilerPixel>
+        </FXCSharpCoompilerPixel>
     </Target>        
 
     <Target Name="UcToolsGenerateVertexSharpShader" DependsOnTargets="UcToolsMakeDirsVertexSharpShader;UcToolsGenerateVertexSharpShaderItems" Condition="'@(VertexSharpShader)' != ''">
@@ -651,7 +651,7 @@
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
-        </FXCompilerVertex>
+        </FXCSharpCoompilerVertex>
     </Target>        
 
 	<Target Name="UcToolsGenerateHullSharpShader" DependsOnTargets="UcToolsMakeDirsHullSharpShader;UcToolsGenerateHullSharpShaderItems" Condition="'@(HullSharpShader)' != ''">
@@ -664,7 +664,7 @@
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
-        </FXCompilerHull>
+        </FXCSharpCoompilerHull>
     </Target>            
 
 	<Target Name="UcToolsGenerateGeometrySharpShader" DependsOnTargets="UcToolsMakeDirsGeometrySharpShader;UcToolsGenerateGeometrySharpShaderItems" Condition="'@(GeometrySharpShader)' != ''">
@@ -677,7 +677,7 @@
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
-        </FXCompilerGeometry>
+        </FXCSharpCoompilerGeometry>
     </Target>
 
 	<Target Name="UcToolsGenerateDomainSharpShader" DependsOnTargets="UcToolsMakeDirsDomainSharpShader;UcToolsGenerateDomainSharpShaderItems" Condition="'@(DomainSharpShader)' != ''">
@@ -690,11 +690,11 @@
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
-        </FXCompilerDomain>
+        </FXCSharpCoompilerDomain>
     </Target>   
 
 	<Target Name="UcToolsGenerateComputeSharpShader" DependsOnTargets="UcToolsMakeDirsComputeSharpShader;UcToolsGenerateComputeSharpShaderItems" Condition="'@(ComputeSharpShader)' != ''">
-        <FXCSharpCoompilerCompute
+        <FXCSharpCompilerCompute
             Source                      ="%(ComputeSharpShaderBuilds.FullPath)" EntryPointName ="%(ComputeSharpShaderBuilds.EntryPointName)"
             CSOutput                    ="%(ComputeSharpShaderBuilds.CSOutput)"
             TypeName                    ="%(ComputeSharpShaderBuilds.TypeName)"
@@ -703,7 +703,7 @@
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
-        </FXCompilerCompute>
+        </FXCSharpCompilerCompute>
     </Target>         
 
 	<Target Name="UcToolsGenerateRootSharpSignature" DependsOnTargets="UcToolsMakeDirsRootSharpSignature;UcToolsGenerateRootSharpSignatureItems" Condition="'@(RootSharpSignature)' != ''">
@@ -716,7 +716,7 @@
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
-        </FXCompilerCompute>
+        </FXCSharpCompilerRootSignature>
     </Target>             
 
     <PropertyGroup>
