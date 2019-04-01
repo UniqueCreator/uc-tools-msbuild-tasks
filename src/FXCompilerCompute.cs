@@ -11,7 +11,15 @@ namespace UniqueCreator
     {
         namespace Tasks
         {
-            public class FXCompilerCompute : FXCompiler
+            public class FXCompilerCompute : FXCppCompiler
+            {
+                protected override string GenerateCommandLineCommands()
+                {
+                    return base.GenerateCommandLineCommands() + " --type compute";
+                }
+            }
+
+            public class FXCSharpCompilerCompute : FXCSharpCompiler
             {
                 protected override string GenerateCommandLineCommands()
                 {

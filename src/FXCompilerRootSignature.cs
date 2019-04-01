@@ -11,7 +11,15 @@ namespace UniqueCreator
     {
         namespace Tasks
         {
-            public class FXCompilerRootSignature : FXCompiler
+            public class FXCompilerRootSignature : FXCppCompiler
+            {
+                protected override string GenerateCommandLineCommands()
+                {
+                    return base.GenerateCommandLineCommands() + " --type rootsignature";
+                }
+            }
+
+            public class FXCSharpCompilerRootSignature : FXCSharpCompiler
             {
                 protected override string GenerateCommandLineCommands()
                 {

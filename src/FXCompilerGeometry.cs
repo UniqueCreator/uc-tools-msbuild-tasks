@@ -11,13 +11,23 @@ namespace UniqueCreator
     {
         namespace Tasks
         {
-            public class FXCompilerGeometry : FXCompiler
+            public class FXCompilerGeometry : FXCppCompiler
             {
                 protected override string GenerateCommandLineCommands()
                 {
                     return base.GenerateCommandLineCommands() + " --type geometry";
                 }
             }
+
+            public class FXCSharpCompilerGeometry : FXCSharpCompiler
+            {
+                protected override string GenerateCommandLineCommands()
+                {
+                    return base.GenerateCommandLineCommands() + " --type geometry";
+                }
+            }
+
+
         }
     }
 }

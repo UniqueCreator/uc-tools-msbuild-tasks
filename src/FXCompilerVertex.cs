@@ -11,7 +11,15 @@ namespace UniqueCreator
     {
         namespace Tasks
         {
-            public class FXCompilerVertex : FXCompiler
+            public class FXCompilerVertex : FXCppCompiler
+            {
+                protected override string GenerateCommandLineCommands()
+                {
+                    return base.GenerateCommandLineCommands() + " --type vertex";
+                }
+            }
+
+            public class FXCSharpCompilerVertex : FXCSharpCompiler
             {
                 protected override string GenerateCommandLineCommands()
                 {

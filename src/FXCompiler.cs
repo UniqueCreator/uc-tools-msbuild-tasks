@@ -51,7 +51,7 @@ namespace UniqueCreator
                     }
                 }
 
-                private string getProperty(string propertyName)
+                protected string getProperty(string propertyName)
                 {
                     if (IsPropertySet(propertyName))
                     {
@@ -63,7 +63,7 @@ namespace UniqueCreator
                     }
                 }
 
-                private ITaskItem getPropertyTaskItem(string propertyName)
+                protected ITaskItem getPropertyTaskItem(string propertyName)
                 {
                     if (IsPropertySet(propertyName))
                     {
@@ -75,7 +75,7 @@ namespace UniqueCreator
                     }
                 }
 
-                private void setPropertyString(string propertyName, string value, string switchName)
+                protected void setPropertyString(string propertyName, string value, string switchName)
                 {
                     ActiveToolSwitches.Remove(propertyName);
 
@@ -94,7 +94,7 @@ namespace UniqueCreator
                     AddActiveSwitchToolValue(s);
                 }
 
-                private void setPropertyTaskItem(string propertyName, ITaskItem value, string switchName)
+                protected void setPropertyTaskItem(string propertyName, ITaskItem value, string switchName)
                 {
                     ActiveToolSwitches.Remove(propertyName);
 
@@ -113,33 +113,7 @@ namespace UniqueCreator
                     AddActiveSwitchToolValue(s);
                 }
 
-                [Output]
-                public virtual string CPPHeaderOutput
-                {
-                    get
-                    {
-                        return getProperty("CPPHeaderOutput");
-                    }
-
-                    set
-                    {
-                        setPropertyString("CPPHeaderOutput", value, "--header");
-                    }
-                }
-
-                [Output]
-                public virtual string CPPOutput
-                {
-                    get
-                    {
-                        return getProperty("CPPOutput");
-                    }
-                    set
-                    {
-                        setPropertyString("CPPOutput", value, "--cpp");
-                    }
-                }
-
+             
                 string PreprocessorDefinitions
                 {
                     get

@@ -69,6 +69,8 @@
     <Compile Include="..\src\PipelineStateObject.cs" />
     <Compile Include="..\src\Properties/AssemblyInfo.cs" />
     <Compile Include="..\src\FXCompiler.cs" />
+    <Compile Include="..\src\FXCppCompiler.cs" />
+    <Compile Include="..\src\FXCSharpCompiler.cs" />
     <Compile Include="..\src\FXCompilerPixel.cs" />
     <Compile Include="..\src\FXCompilerVertex.cs" />
     <Compile Include="..\src\FXCompilerCompute.cs" />

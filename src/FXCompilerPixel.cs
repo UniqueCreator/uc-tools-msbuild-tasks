@@ -11,7 +11,15 @@ namespace UniqueCreator
     {
         namespace Tasks
         {
-            public class FXCompilerPixel : FXCompiler
+            public class FXCompilerPixel : FXCppCompiler
+            {
+                protected override string GenerateCommandLineCommands()
+                {
+                    return base.GenerateCommandLineCommands() + " --type pixel";
+                }
+            }
+
+            public class FXCSharpCompilerPixel : FXCSharpCompiler
             {
                 protected override string GenerateCommandLineCommands()
                 {
