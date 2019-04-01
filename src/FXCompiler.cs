@@ -17,8 +17,6 @@ namespace UniqueCreator
                 public FXCompiler()
                 {
                     m_switchOrderList.Add("EntryPointName");
-                    m_switchOrderList.Add("CPPHeaderOutput");
-                    m_switchOrderList.Add("CPPOutput");
                     m_switchOrderList.Add("Source");
                     m_switchOrderList.Add("AdditionalIncludeDirectories");
                     m_switchOrderList.Add("PreprocessorDefinitions");
@@ -26,8 +24,6 @@ namespace UniqueCreator
                     m_switchOrderList.Add("TypeName");
                     MinimalRebuildFromTracking = true;
                     TrackFileAccess = true;
-
-                    Backend = "dev";
                 }
 
                 protected override string ToolName
