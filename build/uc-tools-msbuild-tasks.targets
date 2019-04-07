@@ -765,4 +765,7 @@
         </BeforeClCompileTargets>
     </PropertyGroup>
 
+    <Target Name="BuildSharpShaders" DependsOnTargets="UcToolsGeneratePixelSharpShader;UcToolsGenerateVertexSharpShader;UcToolsGenerateComputeSharpShader;UcToolsGenerateDomainSharpShader;UcToolsGenerateHullSharpShader;UcToolsGenerateGeometrySharpShader;UcToolsGenerateRootSharpSignature"/>
+    <Target Name="BuildShaders"      DependsOnTargets="UcToolsGeneratePixelShader;UcToolsGenerateVertexShader;UcToolsGenerateComputeShader;UcToolsGenerateSharpShader;UcToolsGenerateHullShader;UcToolsGenerateGeometryShader;UcToolsGenerateRootSignature"/>
+    
 </Project>
