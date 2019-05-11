@@ -14,7 +14,7 @@
     <tags>serialization,unique,uc,creator,pipeline</tags>
 
     <dependencies>
-        <dependency id="uc-tools-graphics-gpu-pipeline-compiler" version="1.0.34"/>
+        <dependency id="uc-tools-graphics-gpu-pipeline-compiler" version="1.0.35"/>
         <dependency id="uc-tools-graphics-gpu-shader-compiler" version="1.0.9"/>
     </dependencies>
 

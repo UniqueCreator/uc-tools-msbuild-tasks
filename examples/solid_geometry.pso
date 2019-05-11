@@ -1,0 +1,9 @@
+import staticgeometry
+
+PipelineStateObject solid_geometry_2 : solid_geometry =
+{
+    .VertexShader=vertex
+    .PixelShader=pixel
+}
+
+
