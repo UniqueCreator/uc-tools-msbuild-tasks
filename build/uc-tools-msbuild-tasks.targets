@@ -500,13 +500,22 @@
     </Target>            
 
     <Target Name="UcToolsGenerateGraphics" DependsOnTargets="UcToolsMakeDirsGraphics;UcToolsGenerateGraphicsItems" Condition="'@(GraphicsPipelineStateObject)' != ''">
+
+	  <PropertyGroup>
+	      <TrackerLogDirectory              Condition="'%(GraphicsPipelineStateObjectBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+	      <MinimalRebuildFromTracking       Condition="'%(GraphicsPipelineStateObjectBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+	      <TrackFileAccess                  Condition="'%(GraphicsPipelineStateObjectBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+	  </PropertyGroup>
+
         <GraphicsPipelineStateObject 
             Source                      ="%(GraphicsPipelineStateObjectBuilds.FullPath)" EntryPointName ="%(GraphicsPipelineStateObjectBuilds.EntryPointName)"
             CPPOutput                   ="%(GraphicsPipelineStateObjectBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(GraphicsPipelineStateObjectBuilds.CPPHeaderOutput)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineTool1Path)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineTool1Name)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
              >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
@@ -514,13 +523,22 @@
     </Target>
 
     <Target Name="UcToolsGenerateCompute" DependsOnTargets="UcToolsMakeDirsCompute;UcToolsGenerateComputeItems" Condition="'@(ComputePipelineStateObject)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(ComputePipelineStateObjectBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(ComputePipelineStateObjectBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(ComputePipelineStateObjectBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <ComputePipelineStateObject 
             Source                      ="%(ComputePipelineStateObjectBuilds.FullPath)" EntryPointName ="%(ComputePipelineStateObjectBuilds.EntryPointName)"
             CPPOutput                   ="%(ComputePipelineStateObjectBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(ComputePipelineStateObjectBuilds.CPPHeaderOutput)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineTool1Path)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineTool1Name)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
              >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
@@ -528,14 +546,23 @@
     </Target>    
 
     <Target Name="UcToolsGeneratePixelShader" DependsOnTargets="UcToolsMakeDirsPixelShader;UcToolsGeneratePixelShaderItems" Condition="'@(PixelShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(PixelShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(PixelShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(PixelShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCompilerPixel
             Source                      ="%(PixelShaderBuilds.FullPath)" EntryPointName ="%(PixelShaderBuilds.EntryPointName)"
             CPPOutput                   ="%(PixelShaderBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(PixelShaderBuilds.CPPHeaderOutput)"
             TypeName                    ="%(PixelShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
@@ -543,14 +570,23 @@
     </Target>    
 
     <Target Name="UcToolsGenerateVertexShader" DependsOnTargets="UcToolsMakeDirsVertexShader;UcToolsGenerateVertexShaderItems" Condition="'@(VertexShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(VertexShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(VertexShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(VertexShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCompilerVertex
             Source                      ="%(VertexShaderBuilds.FullPath)" EntryPointName ="%(VertexShaderBuilds.EntryPointName)"
             CPPOutput                   ="%(VertexShaderBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(VertexShaderBuilds.CPPHeaderOutput)"
             TypeName                    ="%(VertexShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
@@ -558,14 +594,23 @@
     </Target>    
 
     <Target Name="UcToolsGenerateComputeShader" DependsOnTargets="UcToolsMakeDirsComputeShader;UcToolsGenerateComputeShaderItems" Condition="'@(ComputeShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(ComputeShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(ComputeShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(ComputeShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCompilerCompute
             Source                      ="%(ComputeShaderBuilds.FullPath)" EntryPointName ="%(ComputeShaderBuilds.EntryPointName)"
             CPPOutput                   ="%(ComputeShaderBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(ComputeShaderBuilds.CPPHeaderOutput)"
             TypeName                    ="%(ComputeShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
@@ -574,14 +619,24 @@
 
 
     <Target Name="UcToolsGenerateDomainShader" DependsOnTargets="UcToolsMakeDirsDomainShader;UcToolsGenerateDomainShaderItems" Condition="'@(DomainShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(DomainShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(DomainShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(DomainShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
+
         <FXCompilerDomain
             Source                      ="%(DomainShaderBuilds.FullPath)" EntryPointName ="%(DomainShaderBuilds.EntryPointName)"
             CPPOutput                   ="%(DomainShaderBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(DomainShaderBuilds.CPPHeaderOutput)"
             TypeName                    ="%(DomainShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
@@ -589,14 +644,23 @@
     </Target>    
 
     <Target Name="UcToolsGenerateHullShader" DependsOnTargets="UcToolsMakeDirsHullShader;UcToolsGenerateHullShaderItems" Condition="'@(HullShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(HullShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(HullShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(HullShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCompilerHull
             Source                      ="%(HullShaderBuilds.FullPath)" EntryPointName ="%(HullShaderBuilds.EntryPointName)"
             CPPOutput                   ="%(HullShaderBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(HullShaderBuilds.CPPHeaderOutput)"
             TypeName                    ="%(HullShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
@@ -605,14 +669,23 @@
 
 
     <Target Name="UcToolsGenerateGeometryShader" DependsOnTargets="UcToolsMakeDirsGeometryShader;UcToolsGenerateGeometryShaderItems" Condition="'@(GeometryShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(GeometryShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(GeometryShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(GeometryShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCompilerGeometry
             Source                      ="%(GeometryShaderBuilds.FullPath)" EntryPointName ="%(GeometryShaderBuilds.EntryPointName)"
             CPPOutput                   ="%(GeometryShaderBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(GeometryShaderBuilds.CPPHeaderOutput)"
             TypeName                    ="%(GeometryShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
@@ -620,14 +693,23 @@
     </Target>    
 
     <Target Name="UcToolsGenerateRootSignature" DependsOnTargets="UcToolsMakeDirsRootSignature;UcToolsGenerateRootSignatureItems" Condition="'@(RootSignature)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(RootSignatureBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(RootSignatureBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(RootSignatureBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCompilerRootSignature
             Source                      ="%(RootSignatureBuilds.FullPath)" EntryPointName ="%(RootSignatureBuilds.EntryPointName)"
             CPPOutput                   ="%(RootSignatureBuilds.CPPOutput)"
             CPPHeaderOutput             ="%(RootSignatureBuilds.CPPHeaderOutput)"
             TypeName                    ="%(RootSignatureBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CPPOutput"            ItemName="ClCompile" />
             <Output TaskParameter="CPPHeaderOutput"      ItemName="ClInclude" />
@@ -635,91 +717,154 @@
     </Target>        
 
     <Target Name="UcToolsGeneratePixelSharpShader" DependsOnTargets="UcToolsMakeDirsPixelSharpShader;UcToolsGeneratePixelSharpShaderItems" Condition="'@(PixelSharpShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(PixelSharpShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(PixelSharpShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(PixelSharpShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCSharpCompilerPixel
             Source                      ="%(PixelSharpShaderBuilds.FullPath)" EntryPointName ="%(PixelSharpShaderBuilds.EntryPointName)"
             CSOutput                    ="%(PixelSharpShaderBuilds.CSOutput)"
             TypeName                    ="%(PixelSharpShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
         </FXCSharpCompilerPixel>
     </Target>        
 
     <Target Name="UcToolsGenerateVertexSharpShader" DependsOnTargets="UcToolsMakeDirsVertexSharpShader;UcToolsGenerateVertexSharpShaderItems" Condition="'@(VertexSharpShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(VertexSharpShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(VertexSharpShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(VertexSharpShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCSharpCompilerVertex
             Source                      ="%(VertexSharpShaderBuilds.FullPath)" EntryPointName ="%(VertexSharpShaderBuilds.EntryPointName)"
             CSOutput                    ="%(VertexSharpShaderBuilds.CSOutput)"
             TypeName                    ="%(VertexSharpShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
         </FXCSharpCompilerVertex>
     </Target>        
 
     <Target Name="UcToolsGenerateHullSharpShader" DependsOnTargets="UcToolsMakeDirsHullSharpShader;UcToolsGenerateHullSharpShaderItems" Condition="'@(HullSharpShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(HullSharpShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(HullSharpShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(HullSharpShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCSharpCompilerHull
             Source                      ="%(HullSharpShaderBuilds.FullPath)" EntryPointName ="%(HullSharpShaderBuilds.EntryPointName)"
             CSOutput                    ="%(HullSharpShaderBuilds.CSOutput)"
             TypeName                    ="%(HullSharpShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
         </FXCSharpCompilerHull>
     </Target>            
 
     <Target Name="UcToolsGenerateGeometrySharpShader" DependsOnTargets="UcToolsMakeDirsGeometrySharpShader;UcToolsGenerateGeometrySharpShaderItems" Condition="'@(GeometrySharpShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(GeometrySharpShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(GeometrySharpShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(GeometrySharpShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCSharpCompilerGeometry
             Source                      ="%(GeometrySharpShaderBuilds.FullPath)" EntryPointName ="%(GeometrySharpShaderBuilds.EntryPointName)"
             CSOutput                    ="%(GeometrySharpShaderBuilds.CSOutput)"
             TypeName                    ="%(GeometrySharpShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
         </FXCSharpCompilerGeometry>
     </Target>
 
     <Target Name="UcToolsGenerateDomainSharpShader" DependsOnTargets="UcToolsMakeDirsDomainSharpShader;UcToolsGenerateDomainSharpShaderItems" Condition="'@(DomainSharpShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(DomainSharpShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(DomainSharpShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(DomainSharpShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCSharpCompilerDomain
             Source                      ="%(DomainSharpShaderBuilds.FullPath)" EntryPointName ="%(DomainSharpShaderBuilds.EntryPointName)"
             CSOutput                    ="%(DomainSharpShaderBuilds.CSOutput)"
             TypeName                    ="%(DomainSharpShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
         </FXCSharpCompilerDomain>
     </Target>   
 
     <Target Name="UcToolsGenerateComputeSharpShader" DependsOnTargets="UcToolsMakeDirsComputeSharpShader;UcToolsGenerateComputeSharpShaderItems" Condition="'@(ComputeSharpShader)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(ComputeSharpShaderBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(ComputeSharpShaderBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(ComputeSharpShaderBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCSharpCompilerCompute
             Source                      ="%(ComputeSharpShaderBuilds.FullPath)" EntryPointName ="%(ComputeSharpShaderBuilds.EntryPointName)"
             CSOutput                    ="%(ComputeSharpShaderBuilds.CSOutput)"
             TypeName                    ="%(ComputeSharpShaderBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+			TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"            
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
         </FXCSharpCompilerCompute>
     </Target>         
 
     <Target Name="UcToolsGenerateRootSharpSignature" DependsOnTargets="UcToolsMakeDirsRootSharpSignature;UcToolsGenerateRootSharpSignatureItems" Condition="'@(RootSharpSignature)' != ''">
+
+		<PropertyGroup>
+		    <TrackerLogDirectory              Condition="'%(RootSharpSignatureBuilds.TrackerLogDirectory)'              == ''">$(TLogLocation)</TrackerLogDirectory>
+		    <MinimalRebuildFromTracking       Condition="'%(RootSharpSignatureBuilds.MinimalRebuildFromTracking)'       == ''">true</MinimalRebuildFromTracking>
+		    <TrackFileAccess                  Condition="'%(RootSharpSignatureBuilds.TrackFileAccess)'                  == ''">true</TrackFileAccess>
+		</PropertyGroup>
+
         <FXCSharpCompilerRootSignature
             Source                      ="%(RootSharpSignatureBuilds.FullPath)" EntryPointName ="%(RootSharpSignatureBuilds.EntryPointName)"
             CSOutput                    ="%(RootSharpSignatureBuilds.CSOutput)"
             TypeName                    ="%(RootSharpSignatureBuilds.TypeName)"
-            TrackerLogDirectory         ="$(TrackerLogDirectory)"
             ToolPath                    ="$(UCToolsGraphicsPipelineShaderCompilerPath)"
             ToolNameExtended            ="$(UCToolsGraphicsPipelineShaderCompilerName)"
+            TrackFileAccess             ="$(TrackFileAccess)"
+    		MinimalRebuildFromTracking  ="$(MinimalRebuildFromTracking)"
+    		TrackerLogDirectory         ="$(TrackerLogDirectory)"
             >
             <Output TaskParameter="CSOutput"             ItemName="Compile" />
         </FXCSharpCompilerRootSignature>
