@@ -15,7 +15,7 @@
 
     <dependencies>
         <dependency id="uc-tools-graphics-gpu-pipeline-compiler" version="1.0.35"/>
-        <dependency id="uc-tools-graphics-gpu-shader-compiler" version="1.0.9"/>
+        <dependency id="uc-tools-graphics-gpu-shader-compiler" version="1.0.14"/>
     </dependencies>
 
   </metadata>
